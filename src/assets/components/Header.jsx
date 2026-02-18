@@ -1,31 +1,47 @@
+import { NavLink } from "react-router-dom";
+
 export default function Header() {
   return (
-    <ul className="nav">
-      <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="#">
-          Active
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Link
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Link
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          className="nav-link disabled"
-          href="#"
-          tabindex="-1"
-          aria-disabled="true"
-        >
-          Sirio's Businesses & Secrets
-        </a>
-      </li>
-    </ul>
+    <header className="bg-light shadow-sm mb-4">
+      <div className="container">
+        <ul className="nav nav-pills py-3">
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Products
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              About us
+            </NavLink>
+          </li>
+          <li className="nav-item ms-auto">
+            <span className="nav-link disabled text-muted">
+              Sirio's Businesses & Secrets
+            </span>
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 }
