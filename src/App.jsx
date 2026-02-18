@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./assets/pages/HomePage";
-import ProductsPage from "./assets/pages/ProductsPage";
-import AboutPage from "./assets/pages/AboutPage";
-import DefaultLayout from "./assets/layouts/DefaultLayout";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
+import AboutPage from "./pages/AboutPage";
+import DefaultLayout from "./layouts/DefaultLayout";
 
 export default function App() {
   return (
