@@ -1,29 +1,29 @@
 export default function Header() {
   return (
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">
+    <ul className="nav">
+      <li className="nav-item">
+        <a className="nav-link active" aria-current="page" href="#">
           Active
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li className="nav-item">
+        <a className="nav-link" href="#">
           Link
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li className="nav-item">
+        <a className="nav-link" href="#">
           Link
         </a>
       </li>
-      <li class="nav-item">
+      <li className="nav-item">
         <a
-          class="nav-link disabled"
+          className="nav-link disabled"
           href="#"
           tabindex="-1"
           aria-disabled="true"
         >
-          Disabled
+          Sirio's Businesses & Secrets
         </a>
       </li>
     </ul>
