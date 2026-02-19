@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 //note  HOOK --> che ci permette di leggere i parametri dell'url
-import { useParams, Link } from "react-router-dom"; // lo importo
+import { useParams, Link, useNavigate } from "react-router-dom"; // lo importo
 
 export default function ProductDetailPage() {
   const { id } = useParams(); //  lo invoco
-  console.log("ID recuperato dall'URL:", id);
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -13,11 +13,18 @@ export default function ProductDetailPage() {
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
-        setProduct(res.data);
-        setIsLoading(false);
+        if (!res.data) {
+          navigate("/products"); // se l'api risponde ma il prodotto è null
+        } else {
+          setProduct(res.data);
+          setIsLoading(false);
+        }
       })
-      .catch((err) => console.error(err));
-  }, [id]);
+      .catch((error) => {
+        console.error(error);
+        navigate("/products");
+      });
+  }, [id, navigate]);
 
   if (isLoading) {
     return (
