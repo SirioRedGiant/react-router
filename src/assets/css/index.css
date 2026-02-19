@@ -8,7 +8,11 @@
   animation: pulse 2s infinite;
 }
 
-/* Quando il mouse è sopra, applica il wobble */
-.btn-funny:hover {
-  animation: wobble 1.5s infinite;
+/* Quando il mouse è sopra, applica il wobble aumento della specificità per poter sovrascrivere senza usare --> !important*/
+.btn.btn-funny:hover {
+  animation: wobble 0.5s infinite;
+  background-color: #dc3545;
+  border-color: #a71d2a;
+  transform: scale(1.1);
+  color: white;
 }
