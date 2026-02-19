@@ -8,7 +8,7 @@ export default function NotFoundPage() {
       </h1>
       <h2>Snake? SNAAAAAKE!</h2>
       <p>You and this page fell off the map.</p>
-      <Link to="/" className="btn btn-primary mt-3">
+      <Link to="/products/" className="btn btn-primary mt-3">
         Back to Safety? Here we go again
       </Link>
     </div>

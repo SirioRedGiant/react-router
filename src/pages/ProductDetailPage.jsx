@@ -9,7 +9,10 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const currentId = Number(id); // l'url restituisce una stringa così com'è(se facessi id + 1 => "1" + 1 = 11) quindi bisogna convertire in numero
+
   useEffect(() => {
+    setIsLoading(true); // per avviare il reset del loading quando cambia l'ID
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
@@ -24,7 +27,15 @@ export default function ProductDetailPage() {
         console.error(error);
         navigate("/products");
       });
-  }, [id, navigate]);
+  }, [id]);
+
+  //note funzioni per la NAVIGAZIONE PROGRAMMATICA
+  const goToNext = () => navigate(`/products/${currentId + 1}`);
+  const goToPrev = () => {
+    if (currentId > 1) {
+      navigate(`/products/${currentId - 1}`);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -52,7 +63,6 @@ export default function ProductDetailPage() {
       <Link to="/products" className="btn btn-outline-secondary mb-4">
         ← Back to Products
       </Link>
-
       <div className="row align-items-center">
         <div className="col-md-6 text-center">
           <img
@@ -74,6 +84,23 @@ export default function ProductDetailPage() {
             Add to Cart (Real this time?)
           </button>
         </div>
+      </div>
+      {/* BARRA DI NAVIGAZIONE PROGRAMMATICA */}
+      <div className="d-flex justify-content-between align-items-center  mb-4 p-3 bg-light shadow-sm ">
+        <button
+          className="btn btn-outline-dark"
+          onClick={goToPrev}
+          disabled={currentId <= 1} // Disabilita se al primo prodotto
+        >
+          ← Previous Product
+        </button>
+        <button
+          className="btn btn-outline-dark"
+          onClick={goToNext}
+          disabled={currentId >= 20} // Disabilità all'ultimo prodotto
+        >
+          Next Product →
+        </button>
       </div>
     </div>
   );
