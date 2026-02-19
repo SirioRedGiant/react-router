@@ -11,8 +11,8 @@
 /* Quando il mouse è sopra, applica il wobble aumento della specificità per poter sovrascrivere senza usare --> !important*/
 .btn.btn-funny:hover {
   animation: wobble 0.5s infinite;
-  background-color: #dc3545;
-  border-color: #a71d2a;
+  background-color: #98000f;
+  border-color: #840915;
   transform: scale(1.1);
   color: white;
 }
