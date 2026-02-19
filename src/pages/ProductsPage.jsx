@@ -22,7 +22,7 @@ export default function ProductsPage() {
 
   //note Se sta caricando --> mostra un messaggio
   if (isLoading) {
-    return <h2>Loading products...</h2>;
+    return <h2>Loading unexpectedly excellent products...</h2>;
   }
   return (
     <div className="container py-5">
