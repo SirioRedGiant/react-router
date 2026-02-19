@@ -76,7 +76,7 @@ export default function ProductDetailPage() {
           <span className="badge bg-secondary mb-2">{product.category}</span>
           <h1 className="fw-bold">{product.title}</h1>
           <p className="lead text-muted">{product.description}</p>
-          <h2 className="text-primary my-4">{product.price} €</h2>
+          <h2 className="text-primary my-4">{product.price.toFixed(2)} €</h2>
           <button
             className="btn btn-success btn-lg"
             onClick={() => alert("not yet, Snaaake!...")}
