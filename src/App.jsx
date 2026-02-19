@@ -11,6 +11,7 @@ export default function App() {
         <Route Component={DefaultLayout}>
           <Route index Component={HomePage} />
           <Route path="/products" Component={ProductsPage} />
+          <Route path="/products/:id" Component={ProductDetailPage} />
           <Route path="/about-us" Component={AboutPage} />
         </Route>
       </Routes>

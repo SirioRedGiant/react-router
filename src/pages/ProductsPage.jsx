@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
+
 export default function ProductsPage() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +48,12 @@ export default function ProductsPage() {
                 <button className="btn btn-primary mt-auto">
                   Add to your card
                 </button>
+                <Link
+                  to={`/products/${product.id}`}
+                  className="btn btn-outline-dark"
+                >
+                  View Details
+                </Link>
               </div>
             </div>
           </div>
