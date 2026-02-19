@@ -76,7 +76,31 @@ export default function ProductDetailPage() {
           <span className="badge bg-secondary mb-2">{product.category}</span>
           <h1 className="fw-bold">{product.title}</h1>
           <p className="lead text-muted">{product.description}</p>
-          <h2 className="text-primary my-4">{product.price.toFixed(2)} €</h2>
+          <h2 className="text-primary my-4">
+            {
+              Number.isInteger(product.price)
+                ? Math.floor(product.price) // Se è intero no decimali
+                : product.price.toFixed(2) // Se ha decimali ce ne saranno 2
+            }
+            €
+          </h2>
+          {Number.isInteger(product.price) && (
+            <div className="alert alert-warning border-danger d-flex align-items-center gap-3 animate__animated animate__bounceIn-1s">
+              <div>
+                <p className="text-danger fw-bold animate__animated animate__heartBeat animate__infinite">
+                  They want to confuse you with the comma... but NOT ME! I’m
+                  throwing the cents in the trash! It’s FLAT PRICE of pure
+                  excellence! Forget the change, keep the QUALITY!
+                </p>
+              </div>
+              <img
+                src="https://media.tenor.com/fMDrArD3H2IAAAAM/moustache-italian-cult-tv.gif"
+                alt="Meme celebration"
+                style={{ width: "400px", borderRadius: "10px" }}
+                className="animate__animated animate__shakeY animate__infinite animate__slower"
+              />
+            </div>
+          )}
           <button
             className="btn btn-success btn-lg"
             onClick={() => alert("not yet, Snaaake!...")}
