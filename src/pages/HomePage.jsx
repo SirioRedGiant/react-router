@@ -15,7 +15,7 @@ export default function HomePage() {
           </p>
           <Link
             to="/products"
-            className="btn btn-dark btn-lg px-5 shadow animate__animated animate__pulse animate__infinite"
+            className="btn btn-dark btn-lg px-5 shadow animate__animated animate__wobble animate__infinite"
           >
             Go to our products (if you dare)
           </Link>
