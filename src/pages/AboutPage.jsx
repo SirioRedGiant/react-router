@@ -89,14 +89,14 @@ export default function AboutPage() {
           Do yourself a favor and ignore the button below.
         </p>
         <button
-          className="btn btn-outline-secondary px-4 py-2"
+          className="btn btn-disgusting px-4 py-2 animate__animated animate__slow animate__infinite animate__pulse"
           onClick={() =>
             alert(
               "Error: The 'I'm not interested' button is broken. You must buy something now.",
             )
           }
         >
-          Don't click here
+          🤢 DON'T CLICK HERE 🤢
         </button>
       </div>
     </div>

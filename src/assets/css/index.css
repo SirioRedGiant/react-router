@@ -16,3 +16,23 @@
   transform: scale(1.1);
   color: white;
 }
+
+/*//note Il pulsante "Disgustoso" */
+.btn-disgusting {
+  background-color: #4b5320 !important;
+  color: #adff2f !important;
+  border: 3px solid #2f4f4f !important;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-disgusting:hover {
+  /* Cambia cursore in 'cell' o 'not-allowed' per dare fastidio */
+  cursor: wait;
+  /* Colore più sgradevole al passaggio */
+  background-color: #2e3b23 !important;
+  /* Effetto viscido */
+  filter: contrast(1.5) sepia(1) hue-rotate(15deg);
+  /* Animazione Animate.css richiamata */
+  animation: jello 0.8s infinite;
+  box-shadow: 0 0 20px #adff2f;
+}
