@@ -62,7 +62,7 @@ export default function ProductsPage() {
                 <p className="text-muted small text-uppercase">
                   {product.category}
                 </p>
-                <p className="h5 text-primary">{product.price} €</p>
+                <p className="h5 text-primary">{product.price.toFixed(2)} €</p>
                 <button className="btn btn-primary mt-auto">
                   Add to your card
                 </button>
