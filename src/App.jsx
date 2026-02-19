@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import DefaultLayout from "./layouts/DefaultLayout";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 export default function App() {
   return (
